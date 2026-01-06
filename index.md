@@ -39,7 +39,7 @@ scripts:
 <section class="hero" id="hero">
   <div class="container hero-grid">
     <div class="panel">
-      <p class="subdued" style="letter-spacing:0.08em;text-transform:uppercase;">Unofficial small-table variant</p>
+      <p class="subdued" style="letter-spacing:0.08em;text-transform:uppercase;">Blood on the Clocktower</p>
       <h1>PROXYDALE</h1>
       <p><em>An unofficial small-player variant for Blood on the Clocktower (4–6 players).</em></p>
       <p>Blood on the Clocktower is a social deduction game of secrets, logic, and deception, in which players take on unique roles with special abilities while a Storyteller guides the game and the narrative. It is published by The Pandemonium Institute.</p>
