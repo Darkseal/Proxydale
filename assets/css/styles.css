@@ -319,7 +319,7 @@ section {
 }
 
 .download-card__coming-soon {
-  display: inline-flex;
+  text-align: center;
   align-items: center;
   gap: 0.45rem;
   padding: 0.65rem 0.85rem;
