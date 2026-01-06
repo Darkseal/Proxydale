@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="brand">PROXYDALE</div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">What</a>
+        <a href="#rules">Rules</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#design">Design</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">{{ content }}</main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">Unofficial fan-made content.</div>
+        <p>Blood on the Clocktower is © its respective owners.</p>
+      </div>
+      <div class="footer-meta">Created by Dark @ BotC Italy</div>
+    </div>
+  </footer>
+</body>
+</html>
