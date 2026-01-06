@@ -17,7 +17,7 @@ scripts:
     description: Closest to a standard experience, without overburdening the Storyteller.
     links:
       - label: JSON
-        url: /downloads/scripts/welcome-to-proxydale/Welcome_to_Proxydale.json](https://www.botcscripts.com/script/9720/
+        url: /downloads/scripts/welcome-to-proxydale/Welcome_to_Proxydale.json](https://www.botcscripts.com/script/9720/)
       - label: PDF
         url: [/downloads/scripts/welcome-to-proxydale/Welcome_to_Proxydale.pdf](https://www.botcscripts.com/script/9720/1.0.0/download_pdf)
   - title: Revenge of the Seat
