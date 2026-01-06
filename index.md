@@ -25,11 +25,11 @@ scripts:
   - title: Revenge of the Seat
     subtitle: Script
     description: Designed to introduce more complex strategies by leveraging the specific mechanics of this version. Recommended after at least 5–10 games with the previous script.
-    comingsoon: Coming soon
+    coming_soon: Coming soon
   - title: Final Delegation
     subtitle: Script
     description: A true brain-teaser built around the synergies of some experimental characters. Recommended after at least 10–20 games with the previous scripts.
-    comingsoon: Coming soon
+    coming_soon: Coming soon
 ---
 
 <section class="hero" id="hero">
@@ -114,7 +114,7 @@ These “proxy characters” are managed through a unique proxy system, preservi
         {% include download-card.html title=page.rules_download.title subtitle=page.rules_download.subtitle description=page.rules_download.description links=page.rules_download.links %}
         <div class="rune-divider"></div>
         {% for script in page.scripts %}
-          {% include download-card.html title=script.title subtitle=script.subtitle description=script.description links=script.links %}
+          {% include download-card.html title=script.title subtitle=script.subtitle description=script.description links=script.links coming_soon=script.coming_soon %}
         {% endfor %}
       </div>
     </div>
