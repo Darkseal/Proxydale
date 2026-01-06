@@ -23,11 +23,11 @@ scripts:
   - title: Revenge of the Seat
     subtitle: Script
     description: Designed to introduce more complex strategies by leveraging the specific mechanics of this version. Recommended after at least 5–10 games with the previous script.
-    coming_soon: Downloads coming soon.
+    coming_soon: Coming soon
   - title: Final Delegation
     subtitle: Script
     description: A true brain-teaser built around the synergies of some experimental characters. Recommended after at least 10–20 games with the previous scripts.
-    coming_soon: Downloads coming soon.
+    coming_soon: Coming soon
 ---
 
 <section class="hero" id="hero">
@@ -35,17 +35,17 @@ scripts:
     <div class="panel">
       <p class="subdued" style="letter-spacing:0.08em;text-transform:uppercase;">Blood on the Clocktower</p>
       <h1>PROXYDALE</h1>
-      <p><em>An unofficial small-player variant for Blood on the Clocktower (4–6 players).</em></p>
+      <p><em>An unofficial small-player variant for Blood on the Clocktower (4–6 players)</em></p>
       <p>Blood on the Clocktower is a social deduction game of secrets, logic, and deception, in which players take on unique roles with special abilities while a Storyteller guides the game and the narrative. It is published by The Pandemonium Institute.</p>
       <div class="hero-meta">
-        <span><strong>Official site:</strong> <a href="https://bloodontheclocktower.com/">bloodontheclocktower.com</a></span><br />
-        <span>Blood on the Clocktower is © The Pandemonium Institute. All rights reserved.</span>
+        <div><strong>Official site:</strong> <a href="https://bloodontheclocktower.com/">bloodontheclocktower.com</a></div>
+        <div>Blood on the Clocktower is © The Pandemonium Institute. All rights reserved.</div>
       </div>
       <p>Proxydale is a homebrew variant designed to make Blood on the Clocktower playable with only 4, 5, or 6 players, while still preserving the structure and feeling of a full base game (not Teensyville):
         a variant specifically designed to support longer arcs, layered information, and the broader strategic space of the standard game.
       </p>
       <div class="cta-row">
-        <a class="button primary" href="#downloads">Download Proxydale Rules and Scripts (PDF & JSON)</a>
+        <a class="button primary" href="#downloads">Download Rules and Scripts (PDF & JSON)</a>
       </div>
     </div>
   </div>
@@ -59,9 +59,9 @@ scripts:
         Proxydale is an unofficial variant of Blood on the Clocktower designed to make the game fully playable with only 4 to 6 players, without sacrificing the structure, depth, and long-term deduction of a standard session.
 Instead of reducing the game to fit a smaller group, Proxydale expands it: empty chairs are added to the circle to represent full characters in play, generating information, abilities, and hidden interactions.
       </p>
-      <p>
+      <p class="subdued">
 These “proxy characters” are managed through a unique proxy system, preserving the information flow of larger games while obscuring its exact source. The result is a darker, more layered experience, where clues exist, but certainty is rare, and deduction becomes a matter of weaving invisible threads rather than trusting visible roles.</p>
-      <p>The idea behind this project came from a small group of Blood of the Clocktower players experimenting with ways to run meaningful, deduction-heavy sessions at very low player counts, without stripping the game down or fundamentally changing its identity.</p>
+      <p class="subdued">The idea behind this project came from a small group of Blood of the Clocktower players experimenting with ways to run meaningful, deduction-heavy sessions at very low player counts, without stripping the game down or fundamentally changing its identity.</p>
     </div>
   </div>
 </section>
