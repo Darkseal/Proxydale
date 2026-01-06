@@ -3,9 +3,9 @@ layout: default
 title: Proxydale | Blood on the Clocktower Variant
 description: Unofficial 4–6 player Blood on the Clocktower variant that keeps the full-game structure through proxy chairs.
 rules_download:
-  title: Rules
-  subtitle: Core PDF
-  description: Complete ruleset for running Proxydale with proxy chairs.
+  title: Proxydale Manual
+  subtitle: Rules
+  description: Complete ruleset for running Proxydale-based game sessions.
   links:
     - label: PDF (English)
       url: /downloads/rules/PROXYDALE_Rules_v0.2_EN.pdf
@@ -14,7 +14,7 @@ rules_download:
 scripts:
   - title: Welcome to Proxydale
     subtitle: Script
-    description: Closest to a standard experience, without overburdening the Storyteller.
+    description: Specifically designed to guarantee an experience similar to the standard game without overburdening the Storyteller: all characters can be easily managed via proxy.
     links:
       - label: JSON
         url: https://www.botcscripts.com/script/9720/
@@ -22,7 +22,7 @@ scripts:
         url: https://www.botcscripts.com/script/9720/1.0.0/download_pdf
   - title: Revenge of the Seat
     subtitle: Script
-    description: Introduces more complex strategies using Proxydale-specific mechanics.
+    description: Designed to introduce more complex strategies by leveraging the specific mechanics of this version. Recommended after at least 5–10 games with the previous script.
     links:
       - label: JSON
         url: #
@@ -30,7 +30,7 @@ scripts:
         url: #
   - title: Final Delegation
     subtitle: Script
-    description: A true brain-teaser built around experimental synergies.
+    description: A true brain-teaser built around the synergies of some experimental characters. Recommended after at least 10–20 games with the previous scripts.
     links:
       - label: JSON
         url: #
