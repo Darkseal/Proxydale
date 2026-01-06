@@ -45,13 +45,15 @@ scripts:
       <h1>PROXYDALE</h1>
       <p><em>An unofficial small-player variant for Blood on the Clocktower (4–6 players).</em></p>
       <p>Blood on the Clocktower is a social deduction game of secrets, logic, and deception, in which players take on unique roles with special abilities while a Storyteller guides the game and the narrative. It is published by The Pandemonium Institute.</p>
-      <div class="cta-row">
-        <a class="button primary" href="#downloads">Download Rules (PDF)</a>
-        <a class="button" href="#scripts">View Scripts</a>
-      </div>
       <div class="hero-meta">
         <span><strong>Official site:</strong> <a href="https://bloodontheclocktower.com/">bloodontheclocktower.com</a></span><br />
         <span>Blood on the Clocktower is © The Pandemonium Institute. All rights reserved.</span>
+      </div>
+      <p>Proxydale is a homebrew variant designed to make Blood on the Clocktower playable with only 4, 5, or 6 players, while still preserving the structure and feeling of a full base game (not Teensyville):
+        a variant specifically designed to support longer arcs, layered information, and the broader strategic space of the standard game.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href="#downloads">Download Rules and Scripts (PDF & JSON)</a>
       </div>
     </div>
   </div>
@@ -61,9 +63,13 @@ scripts:
   <div class="container">
     <div class="panel">
       <h2 class="section-title">What is Proxydale?</h2>
-      <p class="subdued">Proxydale is a homebrew variant designed to make Blood on the Clocktower playable with only 4, 5, or 6 players, while still preserving the structure and feeling of a full base game (not Teensyville).</p>
-      <p>The idea behind this project came very naturally from my own group. We love Clocktower, but we often find ourselves around the table with only 4 or 5 players plus a Storyteller. After countless Teensyville games, we started experimenting with ways to run meaningful, deduction-heavy sessions at very low player counts, without stripping the game down or fundamentally changing its identity.</p>
-      <p>That experimentation eventually led to Proxydale: a variant specifically designed to support longer arcs, layered information, and the broader strategic space of the standard game. At its core, Proxydale introduces empty chairs that act as “proxy players”: full characters in the game, but without a physical player attached to them. Instead of reducing the game, Proxydale redistributes it.</p>
+      <p class="subdued">
+        Proxydale is an unofficial variant of Blood on the Clocktower designed to make the game fully playable with only 4 to 6 players, without sacrificing the structure, depth, and long-term deduction of a standard session.
+Instead of reducing the game to fit a smaller group, Proxydale expands it: empty chairs are added to the circle to represent full characters in play, generating information, abilities, and hidden interactions.
+      </p>
+      <p>
+These “proxy characters” are managed through a unique proxy system, preserving the information flow of larger games while obscuring its exact source. The result is a darker, more layered experience, where clues exist, but certainty is rare, and deduction becomes a matter of weaving invisible threads rather than trusting visible roles.</p>
+      <p>The idea behind this project came from a small group of Blood of the Clocktower players experimenting with ways to run meaningful, deduction-heavy sessions at very low player counts, without stripping the game down or fundamentally changing its identity.</p>
     </div>
   </div>
 </section>
@@ -106,29 +112,10 @@ scripts:
   </div>
 </section>
 
-<section id="scripts">
-  <div class="container">
-    <div class="panel columns">
-      <div>
-        <h2 class="section-title">Recommended scripts</h2>
-        <p class="subdued">These scripts highlight the unique mechanics of Proxydale while offering different play experiences in terms of complexity, cognitive load, and strategic depth.</p>
-      </div>
-      <div>
-        <ul class="readable-list">
-          <li><strong>Welcome to Proxydale:</strong> Closest to a standard experience, without overburdening the Storyteller.</li>
-          <li><strong>Revenge of the Seat:</strong> Introduces more complex strategies using Proxydale-specific mechanics.</li>
-          <li><strong>Final Delegation:</strong> A true brain-teaser built around experimental synergies.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="downloads">
   <div class="container">
     <div class="panel">
       <h2 class="section-title">Downloads</h2>
-      <p class="subdued">Grab the full rules and the recommended scripts to run Proxydale at your table. PDFs and JSON files are ready for direct sharing.</p>
       <div class="download-section">
         {% include download-card.html title=page.rules_download.title subtitle=page.rules_download.subtitle description=page.rules_download.description links=page.rules_download.links %}
         <div class="rune-divider"></div>
