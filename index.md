@@ -62,7 +62,7 @@ scripts:
 <section id="overview">
   <div class="container">
     <div class="panel">
-      <h2 class="section-title">What is Proxydale?</h2>
+      <h2 class="section-title">Overview</h2>
       <p class="subdued">
         Proxydale is an unofficial variant of Blood on the Clocktower designed to make the game fully playable with only 4 to 6 players, without sacrificing the structure, depth, and long-term deduction of a standard session.
 Instead of reducing the game to fit a smaller group, Proxydale expands it: empty chairs are added to the circle to represent full characters in play, generating information, abilities, and hidden interactions.
