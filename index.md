@@ -53,7 +53,7 @@ scripts:
         a variant specifically designed to support longer arcs, layered information, and the broader strategic space of the standard game.
       </p>
       <div class="cta-row">
-        <a class="button primary" href="#downloads">Download Rules and Scripts (PDF & JSON)</a>
+        <a class="button primary" href="#downloads">Download Proxydale Rules and Scripts (PDF & JSON)</a>
       </div>
     </div>
   </div>
