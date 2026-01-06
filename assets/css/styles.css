@@ -179,9 +179,9 @@ section {
 }
 
 .section-title {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   letter-spacing: 0.06em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.95rem;
 }
 
 .subdued {
@@ -189,23 +189,57 @@ section {
 }
 
 .columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
 .list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .list-grid ul {
   margin: 0;
-  padding-left: 1.1rem;
-  line-height: 1.6;
+  padding-left: 0;
+  line-height: 1.7;
   color: var(--muted);
+}
+
+.readable-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.readable-list li {
+  position: relative;
+  padding: 1rem 1.1rem 1rem 2.35rem;
+  background: var(--panel-contrast);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  line-height: 1.75;
+  color: var(--text);
+  font-size: 1.03rem;
+  letter-spacing: 0.01em;
+}
+
+.readable-list li::before {
+  content: "◆";
+  position: absolute;
+  left: 0.95rem;
+  top: 1.1rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.readable-list strong {
+  color: #f5cfa2;
 }
 
 .download-section {
