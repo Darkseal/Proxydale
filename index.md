@@ -4,7 +4,7 @@ title: Proxydale | Blood on the Clocktower Variant
 description: Unofficial 4–6 player Blood on the Clocktower variant that keeps the full-game structure through proxy chairs.
 rules_download:
   title: Proxydale Manual
-  subtitle: Rules
+  subtitle: Core Rules
   description: Complete ruleset for running Proxydale-based game sessions.
   links:
     - label: PDF (English)
