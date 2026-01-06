@@ -5,13 +5,17 @@
   </div>
   <div class="download-card__content">
     {% if include.description %}<p class="download-card__description">{{ include.description }}</p>{% endif %}
-    <div class="download-card__links">
-      {% for link in include.links %}
-        <a class="download-link" href="{{ link.url | relative_url }}">
-          <span class="download-link__label">{{ link.label }}</span>
-          <span class="download-link__arrow">→</span>
-        </a>
-      {% endfor %}
-    </div>
+    {% if include.links and include.links.size > 0 %}
+      <div class="download-card__links">
+        {% for link in include.links %}
+          <a class="download-link" href="{{ link.url | relative_url }}">
+            <span class="download-link__label">{{ link.label }}</span>
+            <span class="download-link__arrow">→</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% elsif include.coming_soon %}
+      <div class="download-card__coming-soon">{{ include.coming_soon }}</div>
+    {% endif %}
   </div>
 </div>

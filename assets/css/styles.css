@@ -318,6 +318,19 @@ section {
   gap: 0.6rem;
 }
 
+.download-card__coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .download-link {
   display: flex;
   align-items: center;
