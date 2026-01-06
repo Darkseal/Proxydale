@@ -17,9 +17,11 @@ scripts:
     description: Specifically designed to guarantee an experience similar to the standard game without overburdening the Storyteller. All characters can be easily managed via proxy.
     links:
       - label: JSON
-        url: https://www.botcscripts.com/script/9720/
+        url: https://www.botcscripts.com/script/9720/1.0.0/download
       - label: PDF
         url: https://www.botcscripts.com/script/9720/1.0.0/download_pdf
+      - label: Translations & more
+        url: https://www.botcscripts.com/script/9720
   - title: Revenge of the Seat
     subtitle: Script
     description: Designed to introduce more complex strategies by leveraging the specific mechanics of this version. Recommended after at least 5–10 games with the previous script.
