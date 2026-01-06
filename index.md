@@ -14,7 +14,7 @@ rules_download:
 scripts:
   - title: Welcome to Proxydale
     subtitle: Script
-    description: Specifically designed to guarantee an experience similar to the standard game without overburdening the Storyteller: all characters can be easily managed via proxy.
+    description: Specifically designed to guarantee an experience similar to the standard game without overburdening the Storyteller. All characters can be easily managed via proxy.
     links:
       - label: JSON
         url: https://www.botcscripts.com/script/9720/
