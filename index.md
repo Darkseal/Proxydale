@@ -85,8 +85,6 @@ scripts:
           <li><strong>Clarifications:</strong> All effects (poison, drunkenness, madness, etc.) apply to chair characters normally. If a chair’s character is poisoned or drunk, the proxy receives faulty information. If a chair’s character is healthy, its information is correct even if the proxy is poisoned or drunk (unless another effect interferes).</li>
         </ul>
       </div>
-      <div class="rune-divider"></div>
-      <p class="subdued">For a deeper walkthrough and Storyteller prompts, grab the PDF below.</p>
     </div>
   </div>
 </section>
