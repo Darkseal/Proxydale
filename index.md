@@ -7,33 +7,35 @@ rules_download:
   subtitle: Core PDF
   description: Complete ruleset for running Proxydale with proxy chairs.
   links:
-    - label: Download PDF
-      url: /downloads/rules/Proxydale_Rules.pdf
+    - label: PDF (English)
+      url: /downloads/rules/PROXYDALE_Rules_v0.2_EN.pdf
+    - label: PDF (Italian)
+      url: /downloads/rules/PROXYDALE_Rules_v0.2_IT.pdf
 scripts:
   - title: Welcome to Proxydale
     subtitle: Script
     description: Closest to a standard experience, without overburdening the Storyteller.
     links:
       - label: JSON
-        url: /downloads/scripts/welcome-to-proxydale/Welcome_to_Proxydale.json
+        url: /downloads/scripts/welcome-to-proxydale/Welcome_to_Proxydale.json](https://www.botcscripts.com/script/9720/
       - label: PDF
-        url: /downloads/scripts/welcome-to-proxydale/Welcome_to_Proxydale.pdf
+        url: [/downloads/scripts/welcome-to-proxydale/Welcome_to_Proxydale.pdf](https://www.botcscripts.com/script/9720/1.0.0/download_pdf)
   - title: Revenge of the Seat
     subtitle: Script
     description: Introduces more complex strategies using Proxydale-specific mechanics.
     links:
       - label: JSON
-        url: /downloads/scripts/revenge-of-the-seat/Revenge_of_the_Seat.json
+        url: #
       - label: PDF
-        url: /downloads/scripts/revenge-of-the-seat/Revenge_of_the_Seat.pdf
+        url: #
   - title: Final Delegation
     subtitle: Script
     description: A true brain-teaser built around experimental synergies.
     links:
       - label: JSON
-        url: /downloads/scripts/final-delegation/Final_Delegation.json
+        url: #
       - label: PDF
-        url: /downloads/scripts/final-delegation/Final_Delegation.pdf
+        url: #
 ---
 
 <section class="hero" id="hero">
@@ -72,8 +74,6 @@ scripts:
       <div>
         <h2 class="section-title">Rules in a nutshell</h2>
         <p class="subdued">Use these highlights as a quick reference. The PDF contains the full rules, clarifications, and Storyteller guidance.</p>
-      </div>
-      <div class="list-grid">
         <ul>
           <li><strong>Setup:</strong> Increase the circle to 7, 8, or 9 total seats by adding empty chairs. Characters are assigned as in a normal game, with the only restriction that at least one Good and one Evil character must belong to real players (otherwise, re-deal or use Gardener to fix). Empty chairs receive characters and alignments like normal players. Recommended Fabled: Sentinel, Fibbin, Gardener.</li>
           <li><strong>Empty chairs:</strong> Empty chairs represent full characters in play, but they are not players. They can be killed, poisoned, drunk, etc.; can be nominated and executed; do not speak, vote, or nominate directly.</li>
