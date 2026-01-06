@@ -47,6 +47,10 @@ scripts:
         <a class="button primary" href="#downloads">Download Rules (PDF)</a>
         <a class="button" href="#downloads">View Scripts</a>
       </div>
+      <div class="hero-meta">
+        <span><strong>Official site:</strong> <a href="https://bloodontheclocktower.com/">bloodontheclocktower.com</a></span>
+        <span>Blood on the Clocktower is © The Pandemonium Institute. All rights reserved.</span>
+      </div>
     </div>
   </div>
 </section>
