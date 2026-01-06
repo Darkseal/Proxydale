@@ -25,11 +25,11 @@ scripts:
   - title: Revenge of the Seat
     subtitle: Script
     description: Designed to introduce more complex strategies by leveraging the specific mechanics of this version. Recommended after at least 5–10 games with the previous script.
-    coming_soon: Coming soon
+    comingsoon: Coming soon
   - title: Final Delegation
     subtitle: Script
     description: A true brain-teaser built around the synergies of some experimental characters. Recommended after at least 10–20 games with the previous scripts.
-    coming_soon: Coming soon
+    comingsoon: Coming soon
 ---
 
 <section class="hero" id="hero">
