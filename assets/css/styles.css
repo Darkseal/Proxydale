@@ -250,60 +250,123 @@ section {
 .download-card {
   background: var(--panel-contrast);
   border: 1px solid var(--border);
-  padding: 1rem 1.25rem;
-  border-radius: 12px;
-  transition: transform var(--transition), border-color var(--transition);
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  display: grid;
+  grid-template-columns: minmax(180px, 1.1fr) minmax(260px, 1.9fr);
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 28%, rgba(255, 140, 66, 0.08), transparent 26%);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .download-card:hover,
 .download-card:focus-within {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow);
 }
 
-.download-card__header {
+.download-card__meta {
   display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-right: 1rem;
+  border-right: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.download-card__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 .download-card__title {
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 1.2rem;
 }
 
-.download-card__subtitle {
-  color: var(--muted);
-  font-size: 0.95rem;
+.download-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
 }
 
 .download-card__description {
-  margin: 0.5rem 0 0.75rem;
+  margin: 0;
   color: var(--muted);
+  line-height: 1.6;
 }
 
 .download-card__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  gap: 0.6rem;
 }
 
 .download-link {
-  padding: 0.35rem 0.75rem;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
   border: 1px solid var(--border);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.02);
   color: var(--text);
   font-weight: 600;
   letter-spacing: 0.01em;
-  transition: color var(--transition), border-color var(--transition), background var(--transition);
+  transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.download-link__label {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.download-link__arrow {
+  color: var(--accent);
+  font-size: 1rem;
+  transition: transform var(--transition);
 }
 
 .download-link:hover,
 .download-link:focus {
   border-color: rgba(255, 255, 255, 0.14);
   color: var(--accent);
-  background: rgba(255, 140, 66, 0.06);
+  background: rgba(255, 140, 66, 0.08);
+  transform: translateX(2px);
+}
+
+.download-link:hover .download-link__arrow,
+.download-link:focus .download-link__arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 880px) {
+  .download-card {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .download-card__meta {
+    border-right: none;
+    padding-right: 0;
+  }
 }
 
 .rune-divider {

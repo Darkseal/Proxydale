@@ -1,12 +1,17 @@
 <div class="download-card">
-  <div class="download-card__header">
+  <div class="download-card__meta">
+    {% if include.subtitle %}<div class="download-card__eyebrow">{{ include.subtitle }}</div>{% endif %}
     <div class="download-card__title">{{ include.title }}</div>
-    {% if include.subtitle %}<div class="download-card__subtitle">{{ include.subtitle }}</div>{% endif %}
   </div>
-  {% if include.description %}<p class="download-card__description">{{ include.description }}</p>{% endif %}
-  <div class="download-card__links">
-    {% for link in include.links %}
-      <a class="download-link" href="{{ link.url | relative_url }}">{{ link.label }}</a>
-    {% endfor %}
+  <div class="download-card__content">
+    {% if include.description %}<p class="download-card__description">{{ include.description }}</p>{% endif %}
+    <div class="download-card__links">
+      {% for link in include.links %}
+        <a class="download-link" href="{{ link.url | relative_url }}">
+          <span class="download-link__label">{{ link.label }}</span>
+          <span class="download-link__arrow">→</span>
+        </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
