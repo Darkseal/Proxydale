@@ -1,0 +1,18 @@
+# Jekyll configuration for GitHub Pages
+# Keep plugins empty to remain GitHub Pages compatible
+name: Proxydale
+url: ""
+baseurl: ""
+title: "Proxydale"
+description: "An unofficial small-player Blood on the Clocktower variant (4–6 players)."
+permalink: pretty
+markdown: kramdown
+theme: null
+plugins: []
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - LICENSE
