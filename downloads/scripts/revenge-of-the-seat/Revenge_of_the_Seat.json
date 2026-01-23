@@ -1,3 +1,34 @@
-{
-  "placeholder": "Revenge of the Seat script JSON. Replace with final export."
-}
+[
+  {
+    "id": "_meta",
+    "author": "Dark",
+    "name": "Revenge of the Seat"
+  },
+  "knight",
+  "clockmaker",
+  "shugenja",
+  "bountyhunter",
+  "empath",
+  "balloonist",
+  "preacher",
+  "chambermaid",
+  "fortuneteller",
+  "nightwatchman",
+  "artist",
+  "cannibal",
+  "ravenkeeper",
+  "drunk",
+  "sweetheart",
+  "klutz",
+  "barber",
+  "widow",
+  "xaan",
+  "scarletwoman",
+  "baron",
+  "lilmonsta",
+  "imp",
+  "vortox",
+  "leviathan",
+  "fibbin",
+  "sentinel"
+]
