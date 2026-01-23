@@ -25,6 +25,7 @@ scripts:
   - title: Revenge of the Seat
     subtitle: Script
     description: Designed to introduce more complex strategies by leveraging the specific mechanics of this version. Recommended after at least 5–10 games with the previous script.
+    links:
       - label: JSON
         url: https://www.botcscripts.com/script/9955/1.0.0/download
       - label: PDF
@@ -34,6 +35,7 @@ scripts:
   - title: Final Delegation
     subtitle: Script
     description: A true brain-teaser built around the synergies of some experimental characters. Recommended after at least 10–20 games with the previous scripts.
+    links:
       - label: JSON
         url: https://www.botcscripts.com/script/9956/1.0.0/download
       - label: PDF
