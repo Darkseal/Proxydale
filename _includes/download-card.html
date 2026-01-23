@@ -8,7 +8,7 @@
     {% if include.links and include.links.size > 0 %}
       <div class="download-card__links">
         {% for link in include.links %}
-          <a class="download-link" href="{{ link.url | relative_url }}">
+          <a class="download-link" href="{{ link.url | relative_url }}" target="_blank">
             <span class="download-link__label">{{ link.label }}</span>
             <span class="download-link__arrow">→</span>
           </a>
