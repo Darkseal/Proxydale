@@ -17,9 +17,9 @@ scripts:
     description: Specifically designed to guarantee an experience similar to the standard game without overburdening the Storyteller. All characters can be easily managed via proxy.
     links:
       - label: JSON
-        url: https://www.botcscripts.com/script/9720/1.0.0/download
+        url: https://www.botcscripts.com/script/9720/1.0.1/download
       - label: PDF
-        url: https://www.botcscripts.com/script/9720/1.0.0/download_pdf
+        url: https://www.botcscripts.com/script/9720/1.0.1/download_pdf
       - label: Translations & more
         url: https://www.botcscripts.com/script/9720
   - title: Revenge of the Seat
@@ -27,9 +27,9 @@ scripts:
     description: Designed to introduce more complex strategies by leveraging the specific mechanics of this version. Recommended after at least 5–10 games with the previous script.
     links:
       - label: JSON
-        url: https://www.botcscripts.com/script/9955/1.0.0/download
+        url: https://www.botcscripts.com/script/9955/1.0.1/download
       - label: PDF
-        url: https://www.botcscripts.com/script/9955/1.0.0/download_pdf
+        url: https://www.botcscripts.com/script/9955/1.0.1/download_pdf
       - label: Translations & more
         url: https://www.botcscripts.com/script/9955
   - title: Final Delegation
@@ -37,9 +37,9 @@ scripts:
     description: A true brain-teaser built around the synergies of some experimental characters. Recommended after at least 10–20 games with the previous scripts.
     links:
       - label: JSON
-        url: https://www.botcscripts.com/script/9956/1.0.0/download
+        url: https://www.botcscripts.com/script/9956/1.0.1/download
       - label: PDF
-        url: https://www.botcscripts.com/script/9956/1.0.0/download_pdf
+        url: https://www.botcscripts.com/script/9956/1.0.1/download_pdf
       - label: Translations & more
         url: https://www.botcscripts.com/script/9956
 ---
