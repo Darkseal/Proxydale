@@ -53,7 +53,7 @@ NAV = [
 # rules text further down the page.
 FACTS = [
     ("4–6 players", "or more, if you'd like"),
-    ("7–9 seats", "around the circle"),
+    ("7–9 characters", "with some proxy seats"),
     ("Standard game", "no Teensyville"),
 ]
 

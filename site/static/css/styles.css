@@ -261,13 +261,15 @@ p:last-child {
 .hero-grid {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(230px, 0.4fr);
+  grid-template-columns: minmax(0, 1.55fr) minmax(250px, 0.45fr);
   gap: clamp(1.5rem, 4vw, 3.5rem);
   align-items: center;
 }
 
+/* No cap here: on a wide screen the title, the tagline and the buttons should
+   fill the column. Only the lede carries a reading measure, below. */
 .hero-inner {
-  max-width: 62ch;
+  min-width: 0;
 }
 
 .hero__title {
@@ -288,6 +290,7 @@ p:last-child {
 }
 
 .hero__lede {
+  max-width: 76ch;
   color: var(--muted);
   font-size: 1.05rem;
 }
