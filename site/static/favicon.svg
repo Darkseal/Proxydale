@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Proxydale">
+  <!-- Standalone copy of the mark in site/templates/logo.html.j2. A favicon is
+       served outside the page, so the colours are literal here and the dark
+       plate keeps it legible on a light tab strip as well as a dark one. -->
+  <rect width="32" height="32" rx="7" fill="#0c1018" />
+  <g fill="#ff8c42">
+    <circle cx="16" cy="6.5" r="3" />
+    <circle cx="24.23" cy="20.75" r="3" />
+    <circle cx="7.77" cy="20.75" r="3" />
+  </g>
+  <g fill="none" stroke="#8f9aad" stroke-width="1.3" stroke-dasharray="2.5 2.1">
+    <circle cx="24.23" cy="11.25" r="3" />
+    <circle cx="16" cy="25.5" r="3" />
+    <circle cx="7.77" cy="11.25" r="3" />
+  </g>
+</svg>
