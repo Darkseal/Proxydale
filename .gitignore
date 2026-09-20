@@ -1,0 +1,14 @@
+# Sandbox: mockup, prove di build, download temporanei. Niente qui e' canonico.
+_TMP/
+
+# Sito generato: ricostruito da scripts/build_site.py, mai committato.
+site/dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store

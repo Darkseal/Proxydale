@@ -1,0 +1,5 @@
+{# One download button. Expects `link` from the surrounding loop. #}
+<a class="download-link" href="{{ link.url | url(base) }}" target="_blank"{% if "://" in link.url %} rel="noopener"{% endif %}>
+  <span class="download-link__label">{{ link.label }}</span>
+  <span class="download-link__arrow" aria-hidden="true">→</span>
+</a>

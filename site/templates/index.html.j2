@@ -1,0 +1,290 @@
+{% extends "base.html.j2" %}
+{% block title %}Proxydale | Blood on the Clocktower Variant{% endblock %}
+{% block description %}Unofficial 4–6 player Blood on the Clocktower variant that keeps the full-game structure through proxy chairs.{% endblock %}
+
+{% block content %}
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+        <div class="hero-inner">
+          <p class="eyebrow">Blood on the Clocktower</p>
+          <h1 class="hero__title">Proxydale</h1>
+          <p class="hero__tagline">
+            An unofficial small-player variant for Blood on the Clocktower (4–6 players)
+          </p>
+          <p class="hero__lede">
+            Proxydale is a homebrew variant designed to make Blood on the Clocktower playable with
+            only 4, 5, or 6 players, while still preserving the structure and feeling of a full base
+            game (instead of resorting to a Teensyville): a variant specifically designed to support
+            longer arcs, layered information, and the broader strategic space of the standard game.
+          </p>
+
+          <div class="cta-row">
+            <a class="button button--primary" href="#downloads">Download rules &amp; scripts</a>
+            <a class="button" href="#how-it-works">See how it works</a>
+          </div>
+        </div>
+
+        <ul class="facts">
+          {% for value, label in facts %}
+          <li class="fact">
+            <span class="fact__value">{{ value }}</span>
+            <span class="fact__label">{{ label }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container">
+        <h2 class="section__label">Overview</h2>
+        <div class="overview-grid">
+          <p class="overview-card">
+            Proxydale is an unofficial variant of Blood on the Clocktower designed to make the game
+            fully playable with only 4 to 6 players, without sacrificing the structure, depth, and
+            long-term deduction of a standard session. Instead of reducing the game to fit a smaller
+            group, Proxydale expands it: empty chairs are added to the circle to represent full
+            characters in play, generating information, abilities, and hidden interactions.
+          </p>
+          <p class="overview-card">
+            These “proxy characters” are managed through a unique proxy system, preserving the
+            information flow of larger games while obscuring its exact source. The result is a
+            darker, more layered experience, where clues exist, but certainty is rare, and deduction
+            becomes a matter of weaving invisible threads rather than trusting visible roles.
+          </p>
+          <p class="overview-card">
+            The idea behind this project came from a small group of Blood of the Clocktower players
+            experimenting with ways to run meaningful, deduction-heavy sessions at very low player
+            counts, without stripping the game down or fundamentally changing its identity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section section--alt">
+      <div class="container">
+        <h2 class="section__label">How it works</h2>
+
+        <div class="diagram-grid">
+          <figure class="diagram">
+            <svg viewBox="0 0 300 300" role="img" aria-labelledby="circle-title circle-desc">
+              <title id="circle-title">A nine-seat Proxydale circle</title>
+              <desc id="circle-desc">Six real players and three empty chairs sit in one circle. A dashed arrow runs from an empty chair to a real player, who acts as its proxy.</desc>
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+                        markerWidth="5" markerHeight="5" orient="auto">
+                  <path class="diagram__arrowhead" d="M0,0 L10,5 L0,10 z" />
+                </marker>
+              </defs>
+              <circle class="diagram__ring" cx="150" cy="150" r="105" />
+              <path class="diagram__proxy" d="M67.3,139.3 Q153.9,131.6 214.5,191.6" marker-end="url(#arrow)" />
+              <text class="diagram__label" x="150" y="120" text-anchor="middle">proxy</text>
+
+              <g class="seat seat--player"><circle cx="150.0" cy="45.0" r="22" /></g>
+              <g class="seat seat--chair"><circle cx="217.5" cy="69.6" r="22" /></g>
+              <g class="seat seat--player"><circle cx="253.4" cy="131.8" r="22" /></g>
+              <g class="seat seat--player"><circle cx="240.9" cy="202.5" r="22" /></g>
+              <g class="seat seat--chair"><circle cx="185.9" cy="248.7" r="22" /></g>
+              <g class="seat seat--player"><circle cx="114.1" cy="248.7" r="22" /></g>
+              <g class="seat seat--player"><circle cx="59.1" cy="202.5" r="22" /></g>
+              <g class="seat seat--chair"><circle cx="46.6" cy="131.8" r="22" /></g>
+              <g class="seat seat--player"><circle cx="82.5" cy="69.6" r="22" /></g>
+            </svg>
+            <figcaption class="diagram__legend">
+              <span class="legend-item legend-item--player">6 real players</span>
+              <span class="legend-item legend-item--chair">3 empty chairs</span>
+            </figcaption>
+          </figure>
+
+          <ol class="steps">
+            <li class="step">
+              <h3 class="step__title">Chairs join the circle</h3>
+              <p>Empty chairs receive characters and alignments like normal players.</p>
+            </li>
+            <li class="step">
+              <h3 class="step__title">The Storyteller picks a proxy</h3>
+              <p>
+                Each empty chair’s ability is handled through a proxy player of the same team,
+                chosen by the Storyteller when needed (alive or dead).
+              </p>
+            </li>
+            <li class="step">
+              <h3 class="step__title">The proxy acts, blind to the source</h3>
+              <p>
+                The proxy player is told which character activated and what information they learned
+                and/or what action they must take. The proxy is never told which chair the character
+                belongs to.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules" class="section">
+      <div class="container">
+        <h2 class="section__label">Rules</h2>
+        <p class="section__intro">
+          Use these highlights as a quick reference. The PDF contains the full rules,
+          clarifications, and Storyteller guidance.
+        </p>
+
+        <div class="rule-grid">
+          <article class="rule">
+            <h3 class="rule__title">Setup</h3>
+            <p>
+              Increase the circle to 7, 8, or 9 total seats by adding empty chairs. Characters are
+              assigned as in a normal game, with the only restriction that at least one Good and one
+              Evil character must belong to real players (otherwise, re-deal or use Gardener to
+              fix). Empty chairs receive characters and alignments like normal players. Recommended
+              Fabled: Sentinel, Fibbin, Gardener.
+            </p>
+          </article>
+          <article class="rule">
+            <h3 class="rule__title">Empty chairs</h3>
+            <p>
+              Empty chairs represent full characters in play, but they are not players. They can be
+              killed, poisoned, drunk, etc.; can be nominated and executed; do not speak, vote, or
+              nominate directly.
+            </p>
+          </article>
+          <article class="rule rule--wide">
+            <h3 class="rule__title">Proxy system</h3>
+            <p>
+              Each empty chair’s ability is handled through a proxy player of the same team, chosen
+              by the Storyteller when needed (alive or dead). Night abilities are resolved normally,
+              with the proxy receiving the information or making choices. Day or mixed abilities are
+              assigned at the end of the night so the proxy can use them during the day. The proxy
+              player is told which character activated and what information they learned and/or what
+              action they must take. The proxy is never told which chair the character belongs to.
+              Good proxies only know the character exists somewhere among the living chairs. Evil
+              proxies can often deduce or know the location from the initial evil wake-up.
+            </p>
+          </article>
+          <article class="rule">
+            <h3 class="rule__title">Voting and majority</h3>
+            <p>
+              Empty chairs do not vote and do not count toward majority. Only living real players
+              are used to calculate the votes needed for execution.
+            </p>
+          </article>
+          <article class="rule">
+            <h3 class="rule__title">Nominations involving chairs</h3>
+            <p>
+              Chairs cannot nominate directly. A dead player may ask a living chair to nominate on
+              their behalf (once per day, clearly stated, and not targeting itself). After such a
+              request, before voting begins, any Evil player (alive or dead) may publicly veto the
+              nomination. The veto only works if both the chair and the vetoing player are Evil. If
+              valid, the nomination is cancelled, with the obvious drawback that both are publicly
+              revealed as Evil.
+            </p>
+          </article>
+          <article class="rule rule--wide">
+            <h3 class="rule__title">Clarifications</h3>
+            <p>
+              All effects (poison, drunkenness, madness, etc.) apply to chair characters normally.
+              If a chair’s character is poisoned or drunk, the proxy receives faulty information. If
+              a chair’s character is healthy, its information is correct even if the proxy is
+              poisoned or drunk (unless another effect interferes).
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="design" class="section section--alt">
+      <div class="container">
+        <h2 class="section__label">Design</h2>
+        <p class="section__intro">
+          Proxydale preserves the information density of larger games while introducing uncertainty
+          about where information belongs, creating a more opaque, strategic, and deduction-focused
+          experience for very small groups.
+        </p>
+
+        <div class="design-grid">
+          <article class="design-point">
+            <h3 class="design-point__title">Informational continuity</h3>
+            <p>
+              For the Good team, the main benefit lies in informational continuity: even with a
+              small number of real players, the information flow typical of a full game is largely
+              preserved thanks to the chairs. This allows for deeper deductions, cross-referencing
+              of data, and the construction of coherent narratives over the medium term, rewarding
+              coordination, shared memory, and probabilistic reasoning rather than individual
+              certainty.
+            </p>
+          </article>
+          <article class="design-point">
+            <h3 class="design-point__title">Concealment and manipulation</h3>
+            <p>
+              For the Evil team, Proxydale offers new opportunities for concealment and
+              manipulation. The ability to know and coordinate with one’s ally enables more
+              sophisticated strategies than in Teensyville, while the Good team’s inability to
+              precisely locate characters opens broader spaces for ambiguity.
+            </p>
+          </article>
+          <article class="design-point">
+            <h3 class="design-point__title">Who it is for</h3>
+            <p>
+              Overall, Proxydale is designed for experienced groups who can appreciate a more
+              cerebral and less declarative game, and it benefits decisively from an attentive,
+              proactive Storyteller willing to intervene with tools like the Fibbin to maintain
+              pacing, clarity, and balance.
+            </p>
+          </article>
+          <article class="design-point">
+            <h3 class="design-point__title">Chairs as a design tool</h3>
+            <p>
+              In this context, chairs are not merely a technical solution to a numerical problem,
+              but become a true design tool, capable of transforming the game into an exercise in
+              pure deduction and strategic tension.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="section">
+      <div class="container">
+        <h2 class="section__label">Downloads</h2>
+
+        <article class="rulebook">
+          <div class="rulebook__meta">
+            <p class="eyebrow">{{ rulebook.eyebrow }}</p>
+            <h3 class="rulebook__title">{{ rulebook.title }}</h3>
+            <p class="rulebook__description">{{ rulebook.description }}</p>
+          </div>
+          <div class="rulebook__links">
+            {% for link in rulebook.links %}
+            {% include "download-link.html.j2" %}
+            {% endfor %}
+          </div>
+        </article>
+
+        <h3 class="section__label section__label--sub">Scripts</h3>
+        <p class="section__intro">
+          The three scripts form a learning path. Each one assumes you are comfortable with the one
+          before it.
+        </p>
+
+        <ol class="script-grid">
+          {% for script in scripts %}
+          <li class="script">
+            <div class="script__header">
+              <p class="eyebrow">{{ script.eyebrow }}</p>
+              <h4 class="script__title">{{ script.title }}</h4>
+              <p class="script__step">{{ script.step }}</p>
+            </div>
+            <p class="script__description">{{ script.description }}</p>
+            <div class="script__links">
+              {% for link in script.links %}
+              {% include "download-link.html.j2" %}
+              {% endfor %}
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </section>
+{% endblock %}

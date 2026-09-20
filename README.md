@@ -7,7 +7,7 @@ Official site: https://bloodontheclocktower.com/
 
 ---
 
-Proxydale is a homebrew variant designed to make *Blood on the Clocktower* playable with only **4, 5, or 6 players**, while still preserving the structure and feeling of a full base game (not Teensyville).
+Proxydale is a homebrew variant designed to make *Blood on the Clocktower* playable with only **4, 5, or 6 players**, while still preserving the structure and feeling of a full base game (instead of resorting to a Teensyville).
 
 The idea behind this project came very naturally from my own group. We love Clocktower, but we often find ourselves around the table with only 4 or 5 players plus a Storyteller. After countless Teensyville games, we started experimenting with ways to run meaningful, deduction-heavy sessions at very low player counts, without stripping the game down or fundamentally changing its identity.
 

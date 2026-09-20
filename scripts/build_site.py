@@ -1,0 +1,246 @@
+#!/usr/bin/env python3
+"""Build the static Proxydale site.
+
+Sources (never edited by this script):
+  site/templates/   Jinja2 layout and page copy
+  site/static/      stylesheet, script, vendored brand marks
+  downloads/        author-supplied PDFs, copied byte-for-byte
+
+Output: site/dist/ (git-ignored, rebuilt from scratch every run).
+
+Run locally:  python scripts/build_site.py
+Then open site/dist/index.html in a browser. Page-relative paths are used
+throughout, so the preview works straight from the filesystem, no server.
+
+The build fails rather than publishing a gap: a download pointing at a file
+that is not in downloads/, or a missing brand icon, stops it.
+"""
+
+from __future__ import annotations
+
+import re
+import shutil
+import sys
+from pathlib import Path
+
+try:
+    from jinja2 import Environment, FileSystemLoader, StrictUndefined
+except ImportError:  # pragma: no cover
+    sys.exit("jinja2 is required: pip install -r requirements.txt")
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "site"
+TEMPLATES = SITE / "templates"
+STATIC = SITE / "static"
+ICONS = STATIC / "icons"
+DOWNLOADS = ROOT / "downloads"
+DIST = SITE / "dist"
+
+SITE_NAME = "Proxydale"
+SITE_URL = "https://proxydale.ryadel.com"
+OFFICIAL_SITE = "https://bloodontheclocktower.com/"
+
+# Sections in navigation order. The hero is not listed: the brand links to it.
+NAV = [
+    ("overview", "Overview"),
+    ("how-it-works", "How it works"),
+    ("rules", "Rules"),
+    ("design", "Design"),
+    ("downloads", "Downloads"),
+]
+
+# Headline facts, shown in the hero. Every number here is also stated in the
+# rules text further down the page.
+FACTS = [
+    ("4–6", "real players"),
+    ("7–9", "seats in the circle"),
+    ("Full script", "not Teensyville"),
+]
+
+# BotC Italia. Official brand marks, vendored from the Simple Icons package
+# (CC0-1.0) so the build needs no npm dependency and the site makes no
+# third-party requests.
+SOCIAL = [
+    {"name": "YouTube", "icon": "youtube", "url": "https://www.youtube.com/@bloodontheclocktoweritalia2074"},
+    {"name": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/botc.italia/"},
+    {"name": "Twitch", "icon": "twitch", "url": "https://www.twitch.tv/alemonky"},
+]
+
+RULEBOOK = {
+    "eyebrow": "Rules",
+    "title": "Proxydale Rulebook",
+    "description": "Complete ruleset for running Proxydale-based game sessions.",
+    "links": [
+        {"label": "PDF (English)", "url": "downloads/rules/PROXYDALE_Rules_v0.2_EN.pdf"},
+        {"label": "PDF (Italian)", "url": "downloads/rules/PROXYDALE_Rules_v0.2_IT.pdf"},
+    ],
+}
+
+# Ordered as a learning path: each description already states how much
+# experience the previous script assumes, so the order is shown, not implied.
+SCRIPTS = [
+    {
+        "eyebrow": "Script 1",
+        "step": "Start here",
+        "title": "Welcome to Proxydale",
+        "description": (
+            "Specifically designed to guarantee an experience similar to the standard game "
+            "without overburdening the Storyteller. All characters can be easily managed via proxy."
+        ),
+        "links": [
+            {"label": "JSON", "url": "https://www.botcscripts.com/script/9720/1.0.1/download"},
+            {"label": "PDF", "url": "https://www.botcscripts.com/script/9720/1.0.1/download_pdf"},
+            {"label": "Translations & more", "url": "https://www.botcscripts.com/script/9720"},
+        ],
+    },
+    {
+        "eyebrow": "Script 2",
+        "step": "After 5–10 games",
+        "title": "Revenge of the Seat",
+        "description": (
+            "Designed to introduce more complex strategies by leveraging the specific mechanics "
+            "of this version. Recommended after at least 5–10 games with the previous script."
+        ),
+        "links": [
+            {"label": "JSON", "url": "https://www.botcscripts.com/script/9955/1.0.1/download"},
+            {"label": "PDF", "url": "https://www.botcscripts.com/script/9955/1.0.1/download_pdf"},
+            {"label": "Translations & more", "url": "https://www.botcscripts.com/script/9955"},
+        ],
+    },
+    {
+        "eyebrow": "Script 3",
+        "step": "After 10–20 games",
+        "title": "Final Delegation",
+        "description": (
+            "A true brain-teaser built around the synergies of some experimental characters. "
+            "Recommended after at least 10–20 games with the previous scripts."
+        ),
+        "links": [
+            {"label": "JSON", "url": "https://www.botcscripts.com/script/9956/1.0.1/download"},
+            {"label": "PDF", "url": "https://www.botcscripts.com/script/9956/1.0.1/download_pdf"},
+            {"label": "Translations & more", "url": "https://www.botcscripts.com/script/9956"},
+        ],
+    },
+]
+
+# Old GitHub Pages project paths. The Jekyll site emitted these on the custom
+# domain too, because baseurl stayed "/Proxydale", so links to them exist.
+REDIRECTS = """\
+# Generated by scripts/build_site.py.
+# Legacy GitHub Pages project paths: darkseal.github.io/Proxydale/... and the
+# /Proxydale/ links the Jekyll build emitted on the custom domain.
+/Proxydale/*  /:splat  301
+"""
+
+
+def is_external(url: str) -> bool:
+    return "://" in url or url.startswith(("#", "mailto:"))
+
+
+def resolve(url: str, base: str) -> str:
+    """Prefix a site-relative URL with the current page's path to the root."""
+    return url if is_external(url) else base + url
+
+
+def local_downloads() -> list[str]:
+    """Every site-relative download URL the cards point at."""
+    return [
+        link["url"]
+        for card in [RULEBOOK, *SCRIPTS]
+        for link in card["links"]
+        if not is_external(link["url"])
+    ]
+
+
+def check_downloads() -> None:
+    """Fail loudly on a download card that points nowhere."""
+    missing = [url for url in local_downloads() if not (ROOT / url).is_file()]
+    if missing:
+        sys.exit("missing download files:" + "".join("\n  " + url for url in missing))
+
+
+def social_links() -> list[dict]:
+    """Inline the vendored brand marks: one path each, 24x24, no extra request."""
+    links = []
+    for item in SOCIAL:
+        source = ICONS / f"{item['icon']}.svg"
+        if not source.exists():
+            sys.exit(f"missing brand icon: {source}")
+        match = re.search(r'<path d="([^"]+)"', source.read_text(encoding="utf-8"))
+        if not match:
+            sys.exit(f"no path data in {source}")
+        links.append({**item, "path": match.group(1)})
+    return links
+
+
+def copy_static() -> None:
+    """Publish static/, minus icons/: those are build inputs, inlined into the
+    markup, so shipping them again would only add three unused requests."""
+    shutil.copytree(
+        STATIC,
+        DIST / "assets",
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns("icons"),
+    )
+
+
+def copy_downloads() -> None:
+    """Publish the files the cards link to, and nothing else: whatever else sits
+    in downloads/ is history, not part of the site."""
+    for url in local_downloads():
+        target = DIST / url
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(ROOT / url, target)
+
+
+def main() -> None:
+    check_downloads()
+
+    if DIST.exists():
+        shutil.rmtree(DIST)
+    DIST.mkdir(parents=True)
+
+    env = Environment(
+        loader=FileSystemLoader(TEMPLATES),
+        undefined=StrictUndefined,
+        trim_blocks=True,
+        lstrip_blocks=True,
+        autoescape=True,
+    )
+    env.filters["url"] = resolve
+
+    common = {
+        "site_name": SITE_NAME,
+        "site_url": SITE_URL,
+        "official_site": OFFICIAL_SITE,
+        "nav": NAV,
+        "facts": FACTS,
+        "social": social_links(),
+        "rulebook": RULEBOOK,
+        "scripts": SCRIPTS,
+    }
+
+    # `base` is the path from the page back to the site root, `home` the href of
+    # the home page from it. Both pages sit at the root, but 404.html is served
+    # for unknown paths at any depth, so it gets absolute URLs instead; and on
+    # the home page itself the section links are bare fragments.
+    pages = [
+        {"out": "index.html", "template": "index.html.j2", "base": "", "home": "", "canonical": ""},
+        {"out": "404.html", "template": "404.html.j2", "base": "/", "home": "/", "canonical": None},
+    ]
+    for page in pages:
+        html = env.get_template(page["template"]).render(
+            base=page["base"], home=page["home"], canonical=page["canonical"], **common
+        )
+        (DIST / page["out"]).write_text(html, encoding="utf-8")
+
+    copy_static()
+    copy_downloads()
+    (DIST / "_redirects").write_text(REDIRECTS, encoding="utf-8")
+
+    files = sum(1 for p in DIST.rglob("*") if p.is_file())
+    print(f"built {files} files into {DIST.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()
