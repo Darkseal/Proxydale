@@ -91,42 +91,57 @@
     })
     .filter(Boolean);
 
-  if (!sections.length || !("IntersectionObserver" in window)) {
+  if (!sections.length) {
     return;
   }
 
-  // The header covers the top of the viewport, so the "current" section is the
-  // topmost one whose body is inside the band below it.
-  var visible = new Set();
+  /* The current section is the last one whose top has passed under the sticky
+     header — not the first one still touching a band, which lands on the
+     previous entry after a jump: the section you left is still a few pixels
+     inside the band while the one you asked for starts right below it.
+     The line sits a little under scroll-padding-top so the section you jump to
+     counts as reached the moment the jump settles. */
+  function anchorLine() {
+    var header = parseFloat(
+      getComputedStyle(document.documentElement).getPropertyValue("--header-h")
+    );
+    return (header || 60) + 24;
+  }
+
+  function currentSection() {
+    // At the very bottom nothing further can cross the line, so the last
+    // section owns the rest of the page however short it is.
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      return sections[sections.length - 1].id;
+    }
+    var line = anchorLine();
+    var current = null;
+    sections.forEach(function (section) {
+      if (section.getBoundingClientRect().top <= line) {
+        current = section.id;
+      }
+    });
+    return current;
+  }
+
+  var pending = false;
 
   function refresh() {
-    var current = null;
-    for (var i = 0; i < sections.length; i++) {
-      if (visible.has(sections[i].id)) {
-        current = sections[i].id;
-        break;
-      }
-    }
+    pending = false;
+    var current = currentSection();
     links.forEach(function (link) {
       link.classList.toggle("is-active", link.dataset.section === current);
     });
   }
 
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          visible.add(entry.target.id);
-        } else {
-          visible.delete(entry.target.id);
-        }
-      });
-      refresh();
-    },
-    { rootMargin: "-70px 0px -55% 0px", threshold: 0 }
-  );
+  function schedule() {
+    if (!pending) {
+      pending = true;
+      window.requestAnimationFrame(refresh);
+    }
+  }
 
-  sections.forEach(function (section) {
-    observer.observe(section);
-  });
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  refresh();
 })();
