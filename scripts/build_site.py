@@ -52,9 +52,9 @@ NAV = [
 # Headline facts, shown in the hero. Every number here is also stated in the
 # rules text further down the page.
 FACTS = [
-    ("4–6", "real players"),
-    ("7–9", "seats in the circle"),
-    ("Full script", "not Teensyville"),
+    ("4–6 players", "or more, if you'd like"),
+    ("7–9 seats", "around the circle"),
+    ("Standard game", "no Teensyville"),
 ]
 
 # BotC Italia. Official brand marks, vendored from the Simple Icons package
