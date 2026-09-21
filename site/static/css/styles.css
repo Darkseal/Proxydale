@@ -671,6 +671,11 @@ body.nav-open .nav-backdrop {
 
 .rule__title::before {
   content: "◆";
+  /* Not the display font: Google serves Grenze without the `symbols` subset,
+     so U+25C6 would fall back per character to whatever the system supplies,
+     and this diamond would stop matching the identical one on .overview-card,
+     which inherits the body font. */
+  font-family: var(--font-body);
   color: var(--accent);
   font-size: 0.7rem;
 }
